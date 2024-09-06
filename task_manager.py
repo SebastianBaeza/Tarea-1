@@ -11,17 +11,31 @@ logging.basicConfig(filename="task_manager.log",
 # Clase que representa una tarea
 class Task:
     def __init__(self, title, description, due_date, tags):
+
+        # Convertir la fecha ingresada (DD-MM-YYYY) a un objeto datetime
+        try:
+            self.due_date = datetime.strptime(due_date, "%d-%m-%Y")
+        except ValueError:
+            logging.error("Error en el formato de la fecha. Use DD-MM-YYYY.")
+            raise ValueError("La fecha esta incorrecta. Por favor ingrese una fecha valida.")
+        
         self.title = title
         self.description = description
-        self.due_date = due_date
         self.tags = tags
-        self.status = "pending"  # Estado inicial: pendiente
+        # Obtener la fecha actual
+        current_date = datetime.now()
+
+        # Comparar la fecha de vencimiento con la fecha actual
+        if self.due_date < current_date:
+            self.status = "Atrasado"
+        else:
+            self.status = "Pendiente"  # Estado inicial: pendiente
 
     def to_dict(self):
         return {
             "title": self.title,
             "description": self.description,
-            "due_date": self.due_date,
+            "due_date": self.due_date.strftime("%d-%m-%Y"),  # Convertir de vuelta a cadena para almacenar
             "tags": self.tags,
             "status": self.status
         }
@@ -48,11 +62,15 @@ class TaskManager:
             json.dump(self.tasks, file, indent=4)
 
     def create_task(self, title, description, due_date, tags):
-        task = Task(title, description, due_date, tags)
-        self.tasks.append(task.to_dict())
-        self.save_tasks()
-        logging.info(f"Tarea creada: {title}")
-        return f"Tarea '{title}' creada correctamente."
+        try:
+            task = Task(title, description, due_date, tags)
+            self.tasks.append(task.to_dict())
+            self.save_tasks()
+            logging.info(f"Tarea creada: {title}")
+            return f"Tarea '{title}' creada correctamente."
+        except ValueError as e:
+            logging.error(f"Error al crear tarea: {e}")
+            return str(e)
 
     def list_tasks(self):
         if not self.tasks:
@@ -65,6 +83,9 @@ class TaskManager:
     def update_task_status(self, task_index, new_status):
         try:
             task = self.tasks[task_index]
+            if new_status == "Completada":
+                self.delete_task(task_index)
+                return f"Tarea '{task['title']}' completada y eliminada."
             task["status"] = new_status
             self.save_tasks()
             logging.info(f"Estado de la tarea '{task['title']}' actualizado a '{new_status}'.")

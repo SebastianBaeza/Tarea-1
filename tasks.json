@@ -1,13 +1,12 @@
 [
     {
         "title": "Hola mundo",
-        "description": "Prueba de creacion de tareas",
-        "due_date": "07-09-2024",
+        "description": "XD",
+        "due_date": "30-12-2015",
         "tags": [
-            "a",
-            "v",
-            "c"
+            "av",
+            "va"
         ],
-        "status": "pending"
+        "status": "Atrasado"
     }
 ]

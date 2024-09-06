@@ -1,2 +1,15 @@
 2024-09-06 13:54:18,423 - INFO - Tarea creada: Hola mundo
 2024-09-06 13:54:21,465 - INFO - Listado de tareas consultado.
+2024-09-06 17:28:33,673 - INFO - Listado de tareas consultado.
+2024-09-06 17:29:11,213 - INFO - Tarea creada: Hola mundo 2
+2024-09-06 17:29:13,796 - INFO - Listado de tareas consultado.
+2024-09-06 17:29:39,687 - INFO - Estado de la tarea 'Hola mundo 2' actualizado a 'in_progress'.
+2024-09-06 17:29:47,410 - INFO - Tarea eliminada: Hola mundo
+2024-09-06 17:29:58,174 - INFO - Tarea creada: A
+2024-09-06 17:29:59,959 - INFO - Listado de tareas consultado.
+2024-09-06 18:29:00,901 - INFO - Tarea creada: A
+2024-09-06 18:29:03,439 - INFO - Listado de tareas consultado.
+2024-09-06 18:29:21,555 - INFO - Tarea eliminada: A
+2024-09-06 18:29:25,503 - INFO - Listado de tareas consultado.
+2024-09-06 18:30:18,497 - INFO - Tarea creada: Hola mundo
+2024-09-06 18:30:22,502 - INFO - Listado de tareas consultado.

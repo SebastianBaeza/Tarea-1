@@ -18,7 +18,7 @@ def main():
         if option == '1':
             title = input("\nTítulo de la tarea: ")
             description = input("Descripción de la tarea: ")
-            due_date = input("Fecha de vencimiento (YYYY-MM-DD): ")
+            due_date = input("Fecha de vencimiento (DD-MM-YYYY): ")
             tags = input("Etiquetas (separadas por comas): ").split(",")
             print(manager.create_task(title, description, due_date, tags))
 
@@ -28,7 +28,7 @@ def main():
 
         elif option == '3':
             task_index = int(input("\nNúmero de tarea para actualizar el estado: ")) - 1
-            new_status = input("Nuevo estado (pending/in_progress/completed): ")
+            new_status = input("Nuevo estado (Pendiente/En Progreso/Completada): ")
             print(manager.update_task_status(task_index, new_status))
 
         elif option == '4':
