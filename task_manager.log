@@ -13,3 +13,10 @@
 2024-09-06 18:29:25,503 - INFO - Listado de tareas consultado.
 2024-09-06 18:30:18,497 - INFO - Tarea creada: Hola mundo
 2024-09-06 18:30:22,502 - INFO - Listado de tareas consultado.
+2024-09-06 18:32:08,127 - ERROR - Error en el formato de la fecha. Use DD-MM-YYYY.
+2024-09-06 18:32:08,132 - ERROR - Error al crear tarea: El formato de la fecha es incorrecto. Use DD-MM-YYYY.
+2024-09-06 18:35:32,439 - INFO - Listado de tareas consultado.
+2024-09-06 18:35:46,462 - ERROR - Intento de actualizar una tarea no existente.
+2024-09-06 18:35:48,450 - INFO - Listado de tareas consultado.
+2024-09-06 18:36:20,204 - INFO - Estado de la tarea 'Hola mundo' actualizado a 'En Progreso'.
+2024-09-06 18:36:24,824 - INFO - Listado de tareas consultado.
